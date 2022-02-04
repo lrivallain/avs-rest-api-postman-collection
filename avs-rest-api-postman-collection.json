@@ -1,0 +1,3762 @@
+{
+	"info": {
+		"_postman_id": "6df72231-3f28-4a9a-a827-3b38250ed482",
+		"name": "Azure VMware Solution REST API",
+		"description": "The Azure VMware Solution REST API allows you to manage private clouds.\n\nFull documentation on [docs.microsoft.com](https://docs.microsoft.com/en-us/rest/api/avs/).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Private Clouds",
+			"item": [
+				{
+					"name": "Create or Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"location\": \"westeurope\",\r\n  \"sku\": {\r\n    \"name\": \"AV36\"\r\n  },\r\n  \"properties\": {\r\n    \"networkBlock\": \"192.168.48.0/22\",\r\n    \"managementCluster\": {\r\n      \"clusterSize\": 3\r\n    },\r\n    \"internet\": \"Enabled\"\r\n  },\r\n  \"tags\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List In Subscription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/providers/Microsoft.AVS/privateClouds?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"properties\": {\r\n    \"managementCluster\": {\r\n      \"clusterSize\": 4\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Admin Credentials",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/listAdminCredentials?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"listAdminCredentials"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rotate NSX-T Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/rotateNsxtPassword",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"rotateNsxtPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rotate vCenter Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/rotateVcenterPassword?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"rotateVcenterPassword"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authorizations (ExpressRoute Circuit Authorizations)",
+			"item": [
+				{
+					"name": "Create or Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/authorizations/{{authorizationName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"authorizations",
+								"{{authorizationName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/authorizations?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"authorizations"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/authorizations/{{authorizationName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"authorizations",
+								"{{authorizationName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/authorizations/{{authorizationName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"authorizations",
+								"{{authorizationName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clusters",
+			"item": [
+				{
+					"name": "Datastores",
+					"item": [
+						{
+							"name": "Create or Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"properties\": {\r\n    \"netAppVolume\": {\r\n      \"id\": \"/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/ResourceGroup1/providers/Microsoft.NetApp/netAppAccounts/NetAppAccount1/capacityPools/CapacityPool1/volumes/NFSVol1\"\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/datastores/{{datastoreName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"datastores",
+										"{{datastoreName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/datastores?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"datastores"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/datastores/{{datastoreName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"datastores",
+										"{{datastoreName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/datastores/{{datastoreName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"datastores",
+										"{{datastoreName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "API requests to manage netApp or diskPool volumes."
+				},
+				{
+					"name": "Virtual Machines",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/virtualMachines?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"virtualMachines"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/virtualMachines/{{virtualMachineId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"virtualMachines",
+										"{{virtualMachineId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restrict Movement",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"restrictMovement\": \"Enabled\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/virtualMachines/{{virtualMachineId}}/restrictMovement?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"virtualMachines",
+										"{{virtualMachineId}}",
+										"restrictMovement"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "API requests to manage netApp or diskPool volumes."
+				},
+				{
+					"name": "Placement Policies",
+					"item": [
+						{
+							"name": "Create or Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"properties\": {\r\n    \"type\": \"VmHost\",\r\n    \"vmMembers\": [\r\n      \"/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/cluster1/virtualMachines/vm-128\",\r\n      \"/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/cluster1/virtualMachines/vm-256\"\r\n    ],\r\n    \"hostMembers\": [\r\n      \"fakehost22.nyc1.kubernetes.center\",\r\n      \"fakehost23.nyc1.kubernetes.center\",\r\n      \"fakehost24.nyc1.kubernetes.center\"\r\n    ],\r\n    \"affinityType\": \"AntiAffinity\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/placementPolicies/{{placementPolicyName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"placementPolicies",
+										"{{placementPolicyName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/placementPolicies?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"placementPolicies"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/placementPolicies/{{placementPolicyName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"placementPolicies",
+										"{{placementPolicyName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"properties\": {\r\n    \"state\": \"Disabled\",\r\n    \"vmMembers\": [\r\n      \"/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/cluster1/virtualMachines/vm-128\",\r\n      \"/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/cluster1/virtualMachines/vm-256\"\r\n    ],\r\n    \"hostMembers\": [\r\n      \"fakehost22.nyc1.kubernetes.center\",\r\n      \"fakehost23.nyc1.kubernetes.center\",\r\n      \"fakehost24.nyc1.kubernetes.center\"\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/placementPolicies/{{placementPolicyName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"placementPolicies",
+										"{{placementPolicyName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}/placementPolicies/{{placementPolicyName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"clusters",
+										"{{clusterName}}",
+										"placementPolicies",
+										"{{placementPolicyName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "API requests to manage netApp or diskPool volumes."
+				},
+				{
+					"name": "Create or Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sku\": {\r\n    \"name\": \"AV20\"\r\n  },\r\n  \"properties\": {\r\n    \"clusterSize\": 3\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"clusters",
+								"{{clusterName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"clusters"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"clusters",
+								"{{clusterName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"properties\": {\r\n    \"clusterSize\": 4\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"clusters",
+								"{{clusterName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/clusters/{{clusterName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"clusters",
+								"{{clusterName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HCX Enterprise Sites",
+			"item": [
+				{
+					"name": "Create or Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/hcxEnterpriseSites/{{hcxEnterpriseSiteName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"hcxEnterpriseSites",
+								"{{hcxEnterpriseSiteName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/hcxEnterpriseSites?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"hcxEnterpriseSites"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/hcxEnterpriseSites/{{hcxEnterpriseSiteName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"hcxEnterpriseSites",
+								"{{hcxEnterpriseSiteName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/hcxEnterpriseSites/{{hcxEnterpriseSiteName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"hcxEnterpriseSites",
+								"{{hcxEnterpriseSiteName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Global Reach connections",
+			"item": [
+				{
+					"name": "Create or Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"properties\": {\r\n    \"peerExpressRouteCircuit\": \"/subscriptions/12341234-1234-1234-1234-123412341234/resourceGroups/mygroup/providers/Microsoft.Network/expressRouteCircuits/mypeer\",\r\n    \"authorizationKey\": \"01010101-0101-0101-0101-010101010101\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/globalReachConnections/{{globalReachConnectionName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"globalReachConnections",
+								"{{globalReachConnectionName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/globalReachConnections?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"globalReachConnections"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/globalReachConnections/{{globalReachConnectionName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"globalReachConnections",
+								"{{globalReachConnectionName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/globalReachConnections/{{globalReachConnectionName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"globalReachConnections",
+								"{{globalReachConnectionName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cloud Links",
+			"item": [
+				{
+					"name": "Create or Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"properties\": {\r\n    \"linkedCloud\": \"/subscriptions/12341234-1234-1234-1234-123412341234/resourceGroups/mygroup/providers/Microsoft.AVS/privateClouds/cloud2\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/cloudLinks/{{cloudLinkName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"cloudLinks",
+								"{{cloudLinkName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/cloudLinks?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"cloudLinks"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/cloudLinks/{{cloudLinkName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"cloudLinks",
+								"{{cloudLinkName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/cloudLinks/{{cloudLinkName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"cloudLinks",
+								"{{cloudLinkName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Addons",
+			"item": [
+				{
+					"name": "Create or Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"properties\": {\r\n    \"addonType\": \"HCX\",\r\n    \"offer\": \"VMware MaaS Cloud Provider\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/addons/{{addonName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"addons",
+								"{{addonName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/addons?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"addons"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/addons/{{addonName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"addons",
+								"{{addonName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/addons/{{addonName}}?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroupName}}",
+								"providers",
+								"Microsoft.AVS",
+								"privateClouds",
+								"{{privateCloudName}}",
+								"addons",
+								"{{addonName}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Locations",
+			"item": [
+				{
+					"name": "Check Quota Availability",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/providers/Microsoft.AVS/locations/{{location}}/checkQuotaAvailability?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"providers",
+								"Microsoft.AVS",
+								"locations",
+								"{{location}}",
+								"checkQuotaAvailability"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Trial Availability",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/providers/Microsoft.AVS/locations/{{location}}/checkTrialAvailability?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"providers",
+								"Microsoft.AVS",
+								"locations",
+								"{{location}}",
+								"checkTrialAvailability"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Operations",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/providers/Microsoft.AVS/operations?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"providers",
+								"Microsoft.AVS",
+								"operations"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Workload Networks",
+			"item": [
+				{
+					"name": "DHCP",
+					"item": [
+						{
+							"name": "Create or Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"properties\": {\r\n    \"dhcpType\": \"SERVER\",\r\n    \"displayName\": \"dhcpConfigurations1\",\r\n    \"serverAddress\": \"40.1.5.1/24\",\r\n    \"leaseTime\": 86400,\r\n    \"revision\": 1\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dhcpConfigurations/{{dhcpId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"dhcpConfigurations",
+										"{{dhcpId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"properties\": {\r\n    \"dhcpType\": \"SERVER\",\r\n    \"serverAddress\": \"40.1.5.1/24\",\r\n    \"leaseTime\": 86400,\r\n    \"revision\": 1\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dhcpConfigurations/{{dhcpId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"dhcpConfigurations",
+										"{{dhcpId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dhcpConfigurations?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"dhcpConfigurations"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dhcpConfigurations/{{dhcpId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"dhcpConfigurations",
+										"{{dhcpId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dhcpConfigurations/{{dhcpId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"dhcpConfigurations",
+										"{{dhcpId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Segments",
+					"item": [
+						{
+							"name": "Create or Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"properties\": {\r\n    \"displayName\": \"{{segmentId}}\",\r\n    \"connectedGateway\": \"{{gatewayId}}\",\r\n    \"subnet\": {\r\n      \"dhcpRanges\": [\r\n        \"40.20.10.0-40.20.1.100\"\r\n      ],\r\n      \"gatewayAddress\": \"40.20.10.1/24\"\r\n    },\r\n    \"revision\": 1\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/segments/{{segmentId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"segments",
+										"{{segmentId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"properties\": {\r\n    \"displayName\": \"{{segmentId}}\",\r\n    \"connectedGateway\": \"{{gatewayId}}\",\r\n    \"subnet\": {\r\n      \"dhcpRanges\": [\r\n        \"40.20.10.0-40.20.1.100\"\r\n      ],\r\n      \"gatewayAddress\": \"40.20.10.1/24\"\r\n    },\r\n    \"revision\": 1\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/segments/{{segmentId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"segments",
+										"{{segmentId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/segments?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"segments"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/segments/{{segmentId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"segments",
+										"{{segmentId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/segments/{{segmentId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"segments",
+										"{{segmentId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DNS",
+					"item": [
+						{
+							"name": "DNS Services",
+							"item": [
+								{
+									"name": "Create or  Update",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"properties\": {\r\n    \"displayName\": \"{{dnsServiceId}}\",\r\n    \"dnsServiceIp\": \"5.5.5.5\",\r\n    \"defaultDnsZone\": \"defaultDnsZone1\",\r\n    \"fqdnZones\": [\r\n      \"fqdnZone1\"\r\n    ],\r\n    \"logLevel\": \"INFO\",\r\n    \"revision\": 1\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dnsServices/{{dnsServiceId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"dnsServices",
+												"{{dnsServiceId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Patch",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"properties\": {\r\n    \"displayName\": \"{{dnsServiceId}}\",\r\n    \"dnsServiceIp\": \"5.5.5.5\",\r\n    \"defaultDnsZone\": \"defaultDnsZone1\",\r\n    \"fqdnZones\": [\r\n      \"fqdnZone1\"\r\n    ],\r\n    \"logLevel\": \"INFO\",\r\n    \"revision\": 1\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dnsServices/{{dnsServiceId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"dnsServices",
+												"{{dnsServiceId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "List",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dnsServices?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"dnsServices"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dnsServices/{{dnsServiceId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"dnsServices",
+												"{{dnsServiceId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dnsServices/{{dnsServiceId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"dnsServices",
+												"{{dnsServiceId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "DNS Zones",
+							"item": [
+								{
+									"name": "Create or  Update",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"properties\": {\r\n    \"displayName\": \"dnsZone1\",\r\n    \"domain\": [],\r\n    \"dnsServerIps\": [\r\n      \"1.1.1.1\"\r\n    ],\r\n    \"sourceIp\": \"8.8.8.8\",\r\n    \"revision\": 1\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dnsZones/{{dnsZoneId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"dnsZones",
+												"{{dnsZoneId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Patch",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"properties\": {\r\n    \"displayName\": \"dnsZone1\",\r\n    \"domain\": [],\r\n    \"dnsServerIps\": [\r\n      \"1.1.1.1\"\r\n    ],\r\n    \"sourceIp\": \"8.8.8.8\",\r\n    \"revision\": 1\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dnsZones/{{dnsZoneId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"dnsZones",
+												"{{dnsZoneId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "List",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dnsZones?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"dnsZones"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dnsZones/{{dnsZoneId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"dnsZones",
+												"{{dnsZoneId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/dnsZones/{{dnsZoneId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"dnsZones",
+												"{{dnsZoneId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Public IPs",
+					"item": [
+						{
+							"name": "Create or Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"properties\": {\r\n    \"displayName\": \"{{publicIPId}}\",\r\n    \"numberOfPublicIPs\": 10\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/publicIPs/{{publicIPId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"publicIPs",
+										"{{publicIPId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/publicIPs?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"publicIPs"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/publicIPs/{{publicIPId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"publicIPs",
+										"{{publicIPId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/publicIPs/{{publicIPId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"publicIPs",
+										"{{publicIPId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Port mirroring",
+					"item": [
+						{
+							"name": "VM Groups",
+							"item": [
+								{
+									"name": "Create or Update",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"properties\": {\r\n    \"displayName\":\"{{vmGroupId}}\",\r\n    \"members\":[\r\n        \"Ubuntu03\",\r\n        \"Ubuntu02\"\r\n    ],\r\n    \"revision\":0}\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/vmGroups/{{vmGroupId}}vmgroup2?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"vmGroups",
+												"{{vmGroupId}}vmgroup2"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "List",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/vmGroups?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"vmGroups"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/vmGroups/{{vmGroupId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"vmGroups",
+												"{{vmGroupId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/vmGroups/{{vmGroupId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"vmGroups",
+												"{{vmGroupId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Port Mirroring",
+							"item": [
+								{
+									"name": "Create or Update",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"properties\": {\r\n    \"displayName\": \"{{portMirroringId}}\",\r\n    \"direction\": \"BIDIRECTIONAL\",\r\n    \"source\": \"{{vmGroupId}}\",\r\n    \"destination\": \"vmGroup2\",\r\n    \"revision\": 1\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/portMirroringProfiles/{{portMirroringId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"portMirroringProfiles",
+												"{{portMirroringId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "List",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/portMirroringProfiles?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"portMirroringProfiles"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/portMirroringProfiles/{{portMirroringId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"portMirroringProfiles",
+												"{{portMirroringId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/portMirroringProfiles/{{portMirroringId}}?api-version={{api-version}}",
+											"protocol": "https",
+											"host": [
+												"management",
+												"azure",
+												"com"
+											],
+											"path": [
+												"subscriptions",
+												"{{subscriptionId}}",
+												"resourceGroups",
+												"{{resourceGroupName}}",
+												"providers",
+												"Microsoft.AVS",
+												"privateClouds",
+												"{{privateCloudName}}",
+												"workloadNetworks",
+												"default",
+												"portMirroringProfiles",
+												"{{portMirroringId}}"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "{{api-version}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Gateways",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/gateways?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"gateways"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/gateways/{{gatewayId}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"gateways",
+										"{{gatewayId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Virtual Machines",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/virtualMachines?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"virtualMachines"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/workloadNetworks/default/virtualMachines/{{virtualMachineId_FromNetwork}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"workloadNetworks",
+										"default",
+										"virtualMachines",
+										"{{virtualMachineId_FromNetwork}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Scripts",
+			"item": [
+				{
+					"name": "Script Packages",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/scriptPackages?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"scriptPackages"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/scriptPackages/{{scriptPackageName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"scriptPackages",
+										"{{scriptPackageName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Script Cmdlets",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/scriptPackages/{{scriptPackageName}}/scriptCmdlets?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"scriptPackages",
+										"{{scriptPackageName}}",
+										"scriptCmdlets"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/scriptPackages/{{scriptPackageName}}/scriptCmdlets/{{scriptCmdletName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"scriptPackages",
+										"{{scriptPackageName}}",
+										"scriptCmdlets",
+										"{{scriptCmdletName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Script Executions",
+					"item": [
+						{
+							"name": "Create or Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"properties\": {\r\n    \"scriptCmdletId\": \"Microsoft.AVS.Management/3.0.51/{{scriptCmdletName}}\",\r\n    \"timeout\": \"P0Y0M0DT0H60M60S\",\r\n    \"retention\": \"P0Y0M60DT0H60M60S\",\r\n    \"parameters\": [],\r\n    \"hiddenParameters\": []\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/scriptExecutions/{{scriptExecutionName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"scriptExecutions",
+										"{{scriptExecutionName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/scriptExecutions?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"scriptExecutions"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/scriptExecutions/{{scriptExecutionName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"scriptExecutions",
+										"{{scriptExecutionName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Execution Logs",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  \"Output\"\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/scriptExecutions/{{scriptExecutionName}}/getExecutionLogs?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"scriptExecutions",
+										"{{scriptExecutionName}}",
+										"getExecutionLogs"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.AVS/privateClouds/{{privateCloudName}}/scriptExecutions/{{scriptExecutionName}}?api-version={{api-version}}",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.AVS",
+										"privateClouds",
+										"{{privateCloudName}}",
+										"scriptExecutions",
+										"{{scriptExecutionName}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "{{api-version}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api-version",
+			"value": "2021-12-01"
+		}
+	]
+}
